@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class staleBuble : MonoBehaviour
 {
+    GameManager manager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        manager = FindFirstObjectByType<GameManager>();
     }
 
     // Update is called once per frame
@@ -17,6 +18,7 @@ public class staleBuble : MonoBehaviour
     {
         if(collision.gameObject.tag=="blade"){
             Debug.Log("Game is over");
+            StartCoroutine(manager.Explode());
         }
     }
 }
