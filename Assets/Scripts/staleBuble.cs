@@ -18,7 +18,7 @@ public class staleBuble : MonoBehaviour
     {
         if(collision.gameObject.tag=="blade"){
             Debug.Log("Game is over");
-            StartCoroutine(manager.Explode());
+            manager.GameOver();
         }
     }
 }

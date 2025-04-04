@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     //Butonları buton olarak ayarlamama gerek yok çünkü buton fonksiyonlarını yönetmeyeceğiz.
     [SerializeField] private GameObject goMenuBtn; 
     [SerializeField] private GameObject restartBtn;
+    [SerializeField] GameObject spawner; 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,6 +22,9 @@ public class GameManager : MonoBehaviour
 
         goMenuBtn.SetActive(false);
         restartBtn.SetActive(false);
+        spawner.SetActive(true);
+
+        //Buraya arka fon müziği gelecek
     }
 
     // Update is called once per frame
@@ -29,7 +33,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public IEnumerator Explode(){
+    IEnumerator Explode(){
 
         float elapsed = 0f; 
         float duration = 0.5f;
@@ -46,6 +50,12 @@ public class GameManager : MonoBehaviour
         goMenuBtn.SetActive(true);
         restartBtn.SetActive(true);
         
+    }
+    public void GameOver(){
+        StartCoroutine(Explode());
+        spawner.SetActive(false);
+        //Buraya ses gelecek
+
     }
 
     public void GoMenu(){
