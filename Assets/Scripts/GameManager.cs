@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,7 +12,12 @@ public class GameManager : MonoBehaviour
     //Butonları buton olarak ayarlamama gerek yok çünkü buton fonksiyonlarını yönetmeyeceğiz.
     [SerializeField] private GameObject goMenuBtn; 
     [SerializeField] private GameObject restartBtn;
+    [SerializeField] TextMeshProUGUI scoreTxt;
+    [SerializeField] TextMeshProUGUI highScoreTxt;
+
     [SerializeField] GameObject spawner; 
+    public int score;
+    int highScore;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,6 +29,10 @@ public class GameManager : MonoBehaviour
         goMenuBtn.SetActive(false);
         restartBtn.SetActive(false);
         spawner.SetActive(true);
+        highScoreTxt.gameObject.SetActive(false);
+        scoreTxt.gameObject.SetActive(false);
+
+        highScore = PlayerPrefs.GetInt("highScore",0);
 
         //Buraya arka fon müziği gelecek
     }
@@ -49,11 +59,20 @@ public class GameManager : MonoBehaviour
         }
         goMenuBtn.SetActive(true);
         restartBtn.SetActive(true);
+        scoreTxt.gameObject.SetActive(true);
+        highScoreTxt.gameObject.SetActive(true);
         
     }
     public void GameOver(){
         StartCoroutine(Explode());
         spawner.SetActive(false);
+        scoreTxt.text = "Your Score: "+score;
+        if(score>highScore){
+            PlayerPrefs.SetInt("highScore",score);
+            highScoreTxt.text= "New High Score!";
+        }else{
+            highScoreTxt.text="High Score: "+highScore;
+        }
         //Buraya ses gelecek
 
     }
@@ -62,6 +81,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
     public void Restart(){
-        SceneManager.LoadScene(Convert.ToString(SceneManager.GetActiveScene()));
+        SceneManager.LoadScene(1);
     }
 }
