@@ -1355,6 +1355,7 @@ MonoBehaviour:
   fadeImage: {fileID: 360285579}
   goMenuBtn: {fileID: 1438950752}
   restartBtn: {fileID: 444949732}
+  spawner: {fileID: 1284239699}
 --- !u!4 &1127478449
 Transform:
   m_ObjectHideFlags: 0
