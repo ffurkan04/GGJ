@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foods:
   - {fileID: 76718012126389932, guid: 53a88ce0120b20b4f9a79f50bbdfced5, type: 3}
+  sound: {fileID: 8300000, guid: 2322beab7a7ff3449b62016979c8a5cc, type: 3}
 --- !u!1 &7578957948145329037
 GameObject:
   m_ObjectHideFlags: 0

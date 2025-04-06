@@ -7,12 +7,20 @@ public class MenuManager : MonoBehaviour
     [SerializeField]GameObject Text; 
     bool isOpen;
 
+    bool isMute=false;
+    
+    int mute(){
+        if(isMute == false){ return 0;}else{return 1;}
+    }
+
     void Start()
     {
         isOpen=false;
         Text.SetActive(false);
     }
+
     public void GameStart(){
+        PlayerPrefs.SetInt("mute",mute());
         SceneManager.LoadScene(1);
     }
     public void setActiveOfGamePlayMenu(){
@@ -31,5 +39,8 @@ public class MenuManager : MonoBehaviour
                 isOpen=false;
             }
         }
+    }
+    public void Mute(){
+        isMute=!isMute;
     }
 }
