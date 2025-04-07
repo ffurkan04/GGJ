@@ -18,7 +18,7 @@ public class Spawner : MonoBehaviour
     public float minForce =18f;
     public float maxForce = 22f;
 
-    [SerializeField] float maxLifeTime=5f;
+    [SerializeField] float maxLifeTime=60f;
 
     void Awake()
     {

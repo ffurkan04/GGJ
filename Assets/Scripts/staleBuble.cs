@@ -20,5 +20,6 @@ public class staleBuble : MonoBehaviour
             Debug.Log("Game is over");
             manager.GameOver();
         }
+        
     }
 }

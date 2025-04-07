@@ -6,6 +6,7 @@ TagManager:
   tags:
   - blade
   - Food
+  - bubble
   layers:
   - Default
   - TransparentFX

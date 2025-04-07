@@ -22,8 +22,12 @@ public class ScoreArea : MonoBehaviour
             manager.score +=5;
             scoreTxt.text="Score: "+manager.score;
             Destroy(collision.gameObject);
+        }else if(collision.gameObject.CompareTag("bubble")){
+            manager.score -=5;
+            scoreTxt.text="Score: "+ manager.score;
+            Destroy(collision.gameObject);
         }
-        //eğer bozuk baloncuktan gelen yemek olursa onu da score azaltacak şekilde yapacağız.
+        
     
     }
 }
