@@ -59,7 +59,7 @@ public class Spawner : MonoBehaviour
 
             float force =Random.Range(minForce,maxForce);
 
-            buble.GetComponent<Rigidbody2D>().AddForce(buble.transform.up*force,ForceMode2D.Impulse);
+            buble.GetComponent<Rigidbody2D>().AddForce(Vector2.down*force,ForceMode2D.Impulse);
 
             yield return new WaitForSeconds(Random.Range(minSpawnDelay,maxSpawnDelay));
             
