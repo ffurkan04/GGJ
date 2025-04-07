@@ -1994,13 +1994,13 @@ MonoBehaviour:
   bublesPrebs:
   - {fileID: 1219180472636412162, guid: 6312190233e9de4408e643a7da88c6b4, type: 3}
   staleBublePreb: {fileID: 3482216935333499173, guid: caee19f516608a040a3a23ace9899453, type: 3}
-  staleChance: 0.05
+  staleChance: 0.1
   minSpawnDelay: 0.5
   maxSpawnDelay: 1.5
-  minAngle: -15
-  maxAngle: 15
-  minForce: 10
-  maxForce: 18
+  minAngle: -16
+  maxAngle: 16
+  minForce: 12
+  maxForce: 20
   maxLifeTime: 3.5
 --- !u!61 &1284239701
 BoxCollider2D:
@@ -2046,7 +2046,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 6.9, y: 0.5}
+  m_Size: {x: 16, y: 0.5}
   m_EdgeRadius: 0
 --- !u!4 &1284239702
 Transform:
@@ -2217,7 +2217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1392798967
 MonoBehaviour:
   m_ObjectHideFlags: 0
