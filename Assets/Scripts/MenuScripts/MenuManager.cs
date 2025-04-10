@@ -21,7 +21,7 @@ public class MenuManager : MonoBehaviour
 
     public void GameStart(){
         PlayerPrefs.SetInt("mute",mute());
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2); //Hikaye kısmı
     }
     public void setActiveOfGamePlayMenu(){
         if(isOpen == false){

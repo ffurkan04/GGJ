@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 
 
         //arka fon müziği (Müzik henüz bulunmadı)
-        //playMusic(source1,gameMusic,isLoop:true);
+        playMusic(source1,gameMusic,isLoop:true);
 
 
     }
@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.M)){
             isMuted=!isMuted;
         }
+       
+        source1.mute=isMuted;
     }
 
     IEnumerator Explode(){
