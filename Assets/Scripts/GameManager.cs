@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -97,7 +96,7 @@ public class GameManager : MonoBehaviour
             highScoreTxt.text="High Score: "+highScore;
         }
         //Buraya ses gelecek
-        playMusic(source1,endMusic);
+        playMusic(source1,endMusic,false);
     }
 
     public void GoMenu(){
@@ -122,10 +121,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     /// <param name="clip">Çalınacak AudioClip objesi.</param>
     /// <param name="source">Çalınacak AudioSource objesi</param>
-    public void playMusic(AudioSource source,AudioClip clip,bool isLoop = false){
+    public void playMusic(AudioSource source,AudioClip clip,bool isLoop){
         if(!isMuted){
             if(source.isPlaying == true){
-                source1.Stop();
+                source.Stop();
             }
             source.clip = clip;
             source.loop= isLoop;

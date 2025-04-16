@@ -22,7 +22,7 @@ public class Buble : MonoBehaviour
         if(collision.gameObject.tag=="blade"){
             GameObject prefab = foods[Random.Range(0,foods.Length)];
             //Ses efekti
-            manager.playMusic(manager.source2,sound);
+            manager.playMusic(manager.source2,sound,false);
 
             GameObject food = Instantiate(prefab, this.gameObject.transform.position,Quaternion.identity);
 

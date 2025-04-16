@@ -1,10 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
     [SerializeField]GameObject[] buttons; 
     [SerializeField]GameObject Text; 
+    [Header("Mute Button Sprites")]
+    [SerializeField] Sprite _unmutedSprite;
+    [SerializeField] Sprite _mutedSprite;
+    [SerializeField] GameObject _muteButton;
+    Image image;
     bool isOpen;
 
     bool isMute=false;
@@ -17,6 +23,12 @@ public class MenuManager : MonoBehaviour
     {
         isOpen=false;
         Text.SetActive(false);
+        image = _muteButton.GetComponent<Image>();
+        if(isMute==false){ // ses açık
+            image.sprite =_unmutedSprite; 
+        }else{ //ses kapalı
+            image.sprite = _mutedSprite;
+        }
     }
 
     public void GameStart(){
@@ -42,5 +54,10 @@ public class MenuManager : MonoBehaviour
     }
     public void Mute(){
         isMute=!isMute;
+        if(isMute==false){ // ses açık
+            image.sprite =_unmutedSprite; 
+        }else{ //ses kapalı
+            image.sprite = _mutedSprite;
+        }
     }
 }
